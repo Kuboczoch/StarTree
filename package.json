@@ -1,10 +1,11 @@
 {
-  "name": "gatsby-starter-default",
-  "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "name": "startree-website",
+  "private": false,
+  "description": "StarTree is a website that will render vis network from firestore with gatsby!",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Kuboczoch <kuboczoch@gmail.com>",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "gatsby": "^2.19.7",
     "gatsby-image": "^2.2.39",
     "gatsby-plugin-manifest": "^2.2.39",
@@ -12,17 +13,26 @@
     "gatsby-plugin-react-helmet": "^3.1.21",
     "gatsby-plugin-sharp": "^2.4.3",
     "gatsby-source-filesystem": "^2.1.46",
+    "gatsby-source-firestore": "^1.0.3",
     "gatsby-transformer-sharp": "^2.3.13",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-helmet": "^5.2.1"
+    "react-helmet": "^5.2.1",
+    "react-vis-network": "^1.0.0",
+    "styled-components": "^5.0.1",
+    "styled-components-breakpoint": "^3.0.0-preview.20",
+    "styled-components-grid": "^2.2.2",
+    "styled-components-spacing": "^3.1.1"
   },
   "devDependencies": {
-    "prettier": "^1.19.1"
+    "prettier": "^1.19.1",
+    "standard": "^14.3.2",
+    "storybook": "^5.3.17"
   },
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "startree"
   ],
   "license": "MIT",
   "scripts": {
@@ -30,15 +40,15 @@
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
+    "storybook": "start-storybook -p 6006",
     "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "clean": "gatsby clean"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/Kuboczoch/startree-website"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/Kuboczoch/startree-website/issues"
   }
 }
