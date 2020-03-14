@@ -19,11 +19,36 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `startree-website`,
-        short_name: `starter`,
+        short_name: `startree`,
         start_url: `/`,
         background_color: `#323232`,
         display: `minimal-ui`,
         icon: `src/images/favicon.png`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-firestore',
+      options: {
+        credential: require("./.env.firebase.json"),
+        types: [
+          {
+            type: 'User',
+            collection: 'users',
+            map: doc => ({
+              nickname: doc.nickname,
+              color: doc.color
+            }),
+          },
+          {
+            type: 'Relation',
+            collection: 'relations',
+            map: doc => ({
+              from: doc.from,
+              to: doc.to,
+              arrows: doc.arrows
+            }),
+          },
+        ],
       },
     },
     `gatsby-plugin-offline`
