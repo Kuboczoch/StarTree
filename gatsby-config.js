@@ -1,56 +1,92 @@
 module.exports = {
   siteMetadata: {
-    title: `StarTree Website`,
-    description: `StarTree is a website that will render vis network from firestore!`,
-    author: `@kuboczoch`,
+    title: 'StarTree Website',
+    description: 'StarTree is a website that will render vis network from firestore!',
+    author: '@kuboczoch'
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-plugin-favicon',
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
-      },
+        logo: './src/images/favicon.png',
+
+        // WebApp Manifest Configuration
+        appDescription: null,
+        developerName: 'Kuboczoch',
+        lang: 'en-US',
+        background: '#fff',
+        theme_color: '#fff',
+        display: 'standalone',
+        orientation: 'any',
+        version: '1.0',
+
+        icons: {
+          android: true,
+          appleIcon: true,
+          appleStartup: true,
+          coast: false,
+          favicons: true,
+          firefox: true,
+          yandex: false,
+          windows: false
+        }
+      }
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    'gatsby-plugin-react-helmet',
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: `startree-website`,
-        short_name: `startree`,
-        start_url: `/`,
-        background_color: `#323232`,
-        display: `minimal-ui`,
-        icon: `src/images/favicon.png`,
-      },
+        name: 'images',
+        path: `${__dirname}/src/images`
+      }
+    },
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: 'startree-website',
+        short_name: 'startree',
+        start_url: '/',
+        background_color: '#323232',
+        display: 'minimal-ui',
+        icon: 'src/images/favicon.png'
+      }
     },
     {
       resolve: 'gatsby-source-firestore',
       options: {
-        credential: require("./.env.firebase.json"),
+        credential: require('./.env.firebase.json'),
         types: [
           {
             type: 'User',
             collection: 'users',
             map: doc => ({
+              color: doc.color,
+              cross: doc.cross,
               nickname: doc.nickname,
-              color: doc.color
-            }),
+              hearth: doc.hearth
+            })
           },
           {
             type: 'Relation',
             collection: 'relations',
             map: doc => ({
+              arrows: doc.arrows,
+              color: doc.color,
               from: doc.from,
-              to: doc.to,
-              arrows: doc.arrows
-            }),
-          },
-        ],
-      },
+              to: doc.to
+            })
+          }
+        ]
+      }
     },
-    `gatsby-plugin-offline`
-  ],
+    {
+      resolve: 'gatsby-plugin-styled-components',
+      options: {
+        displayName: false
+      }
+    },
+    'gatsby-plugin-offline'
+  ]
 }
