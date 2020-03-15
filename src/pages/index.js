@@ -1,6 +1,6 @@
 import { graphql } from 'gatsby'
 import React from 'react'
-import StarTree from '../components/Network'
+import StarTree from '../components/StarTree'
 import NetworkContainer from '../components/blocks/NetworkContainer'
 import Layout from '../components/layouts/layout'
 
@@ -21,17 +21,7 @@ export const query = graphql`query HomeQuery {
                 color
                 hearth
                 cross
-            }
-        }
-    }
-
-    allRelation {
-        edges {
-            node {
-                arrows
-                from
-                to
-                color
+                relations
             }
         }
     }

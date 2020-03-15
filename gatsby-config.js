@@ -65,17 +65,8 @@ module.exports = {
               color: doc.color,
               cross: doc.cross,
               nickname: doc.nickname,
-              hearth: doc.hearth
-            })
-          },
-          {
-            type: 'Relation',
-            collection: 'relations',
-            map: doc => ({
-              arrows: doc.arrows,
-              color: doc.color,
-              from: doc.from,
-              to: doc.to
+              hearth: doc.hearth,
+              relations: doc.relations
             })
           }
         ]
