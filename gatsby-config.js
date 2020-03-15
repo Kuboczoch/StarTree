@@ -2,7 +2,8 @@ module.exports = {
   siteMetadata: {
     title: 'StarTree Website',
     description: 'StarTree is a website that will render vis network from firestore!',
-    author: '@kuboczoch'
+    author: '@kuboczoch',
+    siteUrl: 'https://startree.kuboczoch.pl'
   },
   plugins: [
     {
@@ -82,7 +83,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: 'https://www.example.com',
+        host: 'https://startree.kuboczoch.pl',
         policy: [{ userAgent: '*', allow: '/' }]
       }
     }
