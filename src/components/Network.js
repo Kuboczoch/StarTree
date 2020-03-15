@@ -2,7 +2,11 @@ import React from 'react'
 import { Edge, Network, Node } from 'react-vis-network'
 
 const nodeStyle = {
-  shape: 'box'
+  shape: 'box',
+  font: {
+    multi: 'html',
+    size: 20
+  }
 }
 
 const StarTree = ({ data }) => (
@@ -12,7 +16,7 @@ const StarTree = ({ data }) => (
         <Node
           key={user.node.id}
           id={user.node.id}
-          label={user.node.nickname + (user.node.hearth ? ' ♥' : '') + (user.node.cross ? ' †' : '')}
+          label={user.node.nickname}
           color={user.node.color}
           {...nodeStyle}
         />
