@@ -78,6 +78,13 @@ module.exports = {
         displayName: false
       }
     },
-    'gatsby-plugin-offline'
+    'gatsby-plugin-offline',
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://www.example.com',
+        policy: [{ userAgent: '*', allow: '/' }]
+      }
+    }
   ]
 }
