@@ -16,7 +16,7 @@ const StarTree = ({ data }) => (
         <Node
           key={user.node.id}
           id={user.node.id}
-          label={user.node.nickname}
+          label={user.node.nickname.concat(user.node.hearth ? ' ♥' : '').concat(user.node.cross ? ' †' : '') }
           color={user.node.color}
           {...nodeStyle}
         />
